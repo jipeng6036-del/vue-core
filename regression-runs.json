@@ -1,0 +1,12 @@
+[
+  {
+    "variant": "baseline",
+    "implementation": "24c9d0bffb2299635b8112a978d74a38723aaa10",
+    "exit": 1
+  },
+  {
+    "variant": "original-patch",
+    "implementation": "e46f444",
+    "exit": 1
+  }
+]

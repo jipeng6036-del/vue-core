@@ -1,0 +1,37 @@
+{
+  "url": "https://github.com/jipeng6036-del/vue-core/actions/runs/41263505693",
+  "runId": 41263505693,
+  "head": "b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a",
+  "conclusion": "success",
+  "event": "push",
+  "branch": "verification/css-blocks-ci-20261031",
+  "jobs": [
+    {
+      "id": 124721383747,
+      "name": "test / lint-and-test-dts",
+      "conclusion": "success"
+    },
+    {
+      "id": 124721383842,
+      "name": "test / unit-test",
+      "conclusion": "success"
+    },
+    {
+      "id": 124721383878,
+      "name": "test / unit-test-windows",
+      "conclusion": "success"
+    },
+    {
+      "id": 124721383969,
+      "name": "test / e2e-test",
+      "conclusion": "success"
+    },
+    {
+      "id": 124721384609,
+      "name": "continuous-release",
+      "conclusion": "skipped"
+    }
+  ],
+  "unmodifiedWorkflow": ".github/workflows/ci.yml -> test.yml",
+  "note": "Fork workflows required explicit enablement after first push; a new verification ref at the identical HEAD triggered the original push workflow. No empty commits, default-branch movement, force push or workflow edits."
+}

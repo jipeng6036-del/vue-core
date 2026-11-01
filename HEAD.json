@@ -1,0 +1,8 @@
+{
+  "base": "24c9d0bffb2299635b8112a978d74a38723aaa10",
+  "source": "d19e2d93e389357d7b164cc596afe3bb86f4a25f",
+  "head": "b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a",
+  "tree": "263733a51e4a75c6ea64c519767ce00bc410d306",
+  "branch": "fix/css-declaration-blocks-pr5",
+  "pushedAtUtc": "2026-11-01T01:59:51.689411+00:00"
+}

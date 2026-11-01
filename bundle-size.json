@@ -1,0 +1,17 @@
+[
+  {
+    "variant": "baseline",
+    "rawBytes": 113423,
+    "gzipBytes": 42445
+  },
+  {
+    "variant": "original-patch",
+    "rawBytes": 113576,
+    "gzipBytes": 42516
+  },
+  {
+    "variant": "candidate",
+    "rawBytes": 113643,
+    "gzipBytes": 42537
+  }
+]

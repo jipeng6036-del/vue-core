@@ -1,0 +1,69 @@
+{
+  "base": "24c9d0bffb2299635b8112a978d74a38723aaa10",
+  "head": "b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a",
+  "tree": "263733a51e4a75c6ea64c519767ce00bc410d306",
+  "node": "24.14.0",
+  "pnpm": "12.11.2",
+  "nativeBrowser": "Chromium156.0.8078.4",
+  "requiredLocalChecks": {
+    "lint": "PASS",
+    "format-check": "PASS, canonical Git blob LF bytes",
+    "check": "PASS",
+    "build --withTypes": "PASS",
+    "test-dts": "PASS",
+    "test-unit run --maxWorkers=2": "3950 PASS,5 SKIP",
+    "test-e2e Puppeteer project": "36 PASS",
+    "test-e2e Playwright project": "84 PASS, validation-only project APIhost127.0.0.1",
+    "verify-treeshaking": "PASS"
+  },
+  "failingAttemptsRetainedLocally": [
+    "Native default-parallel unit run had3 timing-dependent failures; no assertions or timeouts changed, full reduced-worker run passed.",
+    "Initial full format-check read CRLF checkout files; restored exact canonical Git-blob LF bytes, no substantive source edits.",
+    "First build used an extra CLI -- and selected a nonexistent target; corrected command passed.",
+    "Browser project localhost connection refused; CLI host option did not override nested project. Validation-only config overrides that project host; original repo config remains unchanged.",
+    "Initial installed-package harness did not HTML-escape apostrophes in expected SSR text, and build modes differed in declaration generation. Version2 corrects expected HTML escaping and uses identical --withTypes builds for all three arms."
+  ],
+  "forkCI": {
+    "url": "https://github.com/jipeng6036-del/vue-core/actions/runs/41263505693",
+    "runId": 41263505693,
+    "head": "b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a",
+    "conclusion": "success",
+    "event": "push",
+    "branch": "verification/css-blocks-ci-20261031",
+    "jobs": [
+      {
+        "id": 124721383747,
+        "name": "test / lint-and-test-dts",
+        "conclusion": "success"
+      },
+      {
+        "id": 124721383842,
+        "name": "test / unit-test",
+        "conclusion": "success"
+      },
+      {
+        "id": 124721383878,
+        "name": "test / unit-test-windows",
+        "conclusion": "success"
+      },
+      {
+        "id": 124721383969,
+        "name": "test / e2e-test",
+        "conclusion": "success"
+      },
+      {
+        "id": 124721384609,
+        "name": "continuous-release",
+        "conclusion": "skipped"
+      }
+    ],
+    "unmodifiedWorkflow": ".github/workflows/ci.yml -> test.yml",
+    "note": "Fork workflows required explicit enablement after first push; a new verification ref at the identical HEAD triggered the original push workflow. No empty commits, default-branch movement, force push or workflow edits."
+  },
+  "authorship": {
+    "originalCommit": "d19e2d93e389357d7b164cc596afe3bb86f4a25f",
+    "originalAuthor": "Suliman Abdulrazzaq <suliman9000a@gmail.com>",
+    "preservedCherryPick": "e46f4442715f52ae1384e1a8297637ab1ae76af3",
+    "additionalCoauthoredCommit": "b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a"
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "resolved": {
+    "vue": "node_modules/vue/index.js",
+    "@vue/server-renderer": "node_modules/@vue/server-renderer/index.js",
+    "@vue/shared": "node_modules/@vue/shared/index.js"
+  },
+  "results": [
+    {
+      "mode": "ssr-render",
+      "value": "{ red; blue }",
+      "expected": "<div style=\"--tokens:{ red; blue };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ red;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "{ red; blue }",
+      "expected": "<div style=\"--tokens:{ red; blue };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ red;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "[red; blue]",
+      "expected": "<div style=\"--tokens:[red; blue];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[red;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "[red; blue]",
+      "expected": "<div style=\"--tokens:[red; blue];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[red;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "<div style=\"--tokens:{ outer: [one; two]; inner: { three; four } };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ outer: [one;inner:{ three;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "<div style=\"--tokens:{ outer: [one; two]; inner: { three; four } };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ outer: [one;inner:{ three;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "[one; { two; three }; four]",
+      "expected": "<div style=\"--tokens:[one; { two; three }; four];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[one;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "[one; { two; three }; four]",
+      "expected": "<div style=\"--tokens:[one; { two; three }; four];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[one;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "fn([one; two], { three; four })",
+      "expected": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "actual": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "fn([one; two], { three; four })",
+      "expected": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "actual": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "<div style=\"--tokens:{ &quot;};]&quot;; \\}; [one; two] };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ &quot;};]&quot;;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "<div style=\"--tokens:{ &quot;};]&quot;; \\}; [one; two] };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ &quot;};]&quot;;color:red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "';'",
+      "expected": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "';'",
+      "expected": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "':)'",
+      "expected": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "':)'",
+      "expected": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "\"a;b\"",
+      "expected": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "\"a;b\"",
+      "expected": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "{ red; blue }",
+      "actual": "{ red",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "{ red; blue }",
+      "actual": "{ red",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "{ red; blue }",
+      "actual": "{ red",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "[red; blue]",
+      "actual": "[red",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "[red; blue]",
+      "actual": "[red",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "[red; blue]",
+      "actual": "[red",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "actual": "{ outer: [one",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "actual": "{ outer: [one",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "actual": "{ outer: [one",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "[one; { two; three }; four]",
+      "actual": "[one",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "[one; { two; three }; four]",
+      "actual": "[one",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "[one; { two; three }; four]",
+      "actual": "[one",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "fn([one; two], { three; four })",
+      "actual": "fn([one; two], { three; four })",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "fn([one; two], { three; four })",
+      "actual": "fn([one; two], { three; four })",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "fn([one; two], { three; four })",
+      "actual": "fn([one; two], { three; four })",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "actual": "{ \"};]\"",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "actual": "{ \"};]\"",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "actual": "{ \"};]\"",
+      "color": "red",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "';'",
+      "actual": "';'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "';'",
+      "actual": "';'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "';'",
+      "actual": "';'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "':)'",
+      "actual": "':)'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "':)'",
+      "actual": "':)'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "':)'",
+      "actual": "':)'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "\"a;b\"",
+      "actual": "\"a;b\"",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "\"a;b\"",
+      "actual": "\"a;b\"",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "\"a;b\"",
+      "actual": "\"a;b\"",
+      "color": "red",
+      "pass": true
+    }
+  ],
+  "browser": "156.0.8078.4",
+  "passed": 20,
+  "total": 45
+}

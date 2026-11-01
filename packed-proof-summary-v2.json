@@ -1,0 +1,23 @@
+[
+  {
+    "variant": "candidate",
+    "proofExit": 0,
+    "passed": 45,
+    "total": 45,
+    "verifiedPackedFiles": 124
+  },
+  {
+    "variant": "baseline",
+    "proofExit": 1,
+    "passed": 10,
+    "total": 45,
+    "verifiedPackedFiles": 124
+  },
+  {
+    "variant": "original-patch",
+    "proofExit": 1,
+    "passed": 20,
+    "total": 45,
+    "verifiedPackedFiles": 124
+  }
+]
