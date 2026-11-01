@@ -1,0 +1,36 @@
+[
+  {
+    "variant": "before",
+    "total": 80,
+    "passed": 61,
+    "failed": 19,
+    "failureNames": [
+      "style URL tokens preserves unquoted URL tokens and following declarations: url(https://example.com/[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: URL(https://example.com/{)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: url(https://example.com/[;x)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: url(https://example.com/a\\)b[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: \\75rl(https://example.com/[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: u\\72l(https://example.com/[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: \\url(https://example.com/[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: \\000075 rl(https://example.com/[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: url( \t\nhttps://example.com/[)",
+      "style URL tokens preserves unquoted URL tokens and following declarations: fn(url(https://example.com/[); [one; two])",
+      "style URL tokens preserves unquoted URL tokens and following declarations: <!--url(https://example.com/[)",
+      "SSR style declaration blocks preserves URL tokens in style arrays: url(https://example.com/[)",
+      "SSR style declaration blocks preserves URL tokens in style arrays: URL(https://example.com/{)",
+      "SSR style declaration blocks preserves URL tokens in style arrays: u\\72l(https://example.com/[)",
+      "SSR style declaration blocks preserves URL tokens in style arrays: url(https://example.com/a\\)b[)",
+      "compiler: style transform preserves URL tokens in static styles: url(https://example.com/[)",
+      "compiler: style transform preserves URL tokens in static styles: URL(https://example.com/{)",
+      "compiler: style transform preserves URL tokens in static styles: u\\72l(https://example.com/[)",
+      "compiler: style transform preserves URL tokens in static styles: url(https://example.com/a\\)b[)"
+    ]
+  },
+  {
+    "variant": "candidate",
+    "total": 80,
+    "passed": 80,
+    "failed": 0,
+    "failureNames": []
+  }
+]

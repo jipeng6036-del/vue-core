@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "before",
+    "passed": 100,
+    "total": 155,
+    "packedPayloadFilesVerified": 124
+  },
+  {
+    "variant": "candidate",
+    "passed": 155,
+    "total": 155,
+    "packedPayloadFilesVerified": 124
+  }
+]

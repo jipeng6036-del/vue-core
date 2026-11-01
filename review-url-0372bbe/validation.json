@@ -1,0 +1,51 @@
+{
+  "head": "0372bbe363f900e154e5143de6b155519f86af0f",
+  "before": "b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a",
+  "node": "24.14.0",
+  "pnpm": "12.11.2",
+  "unitPassed": 3980,
+  "unitSkipped": 5,
+  "e2ePassed": 120,
+  "lint": "PASS",
+  "format": "PASS",
+  "type": "PASS",
+  "buildWithTypes": "PASS",
+  "typeDeclarationTests": "PASS",
+  "treeshaking": "PASS",
+  "settings": "Native Windows unit suite uses maxWorkers=2; E2E validation-only config sets browser project api.host to127.0.0.1. No test assertions, timeouts or repository workflows/config were changed. Original stock fork CI is recorded separately.",
+  "fixtureCorrection": "The first browser harness incorrectly expected an undefined dashed custom function --url(...) to be accepted. Native CSSOM rejects it. The final harness retains all three browser cases as explicit native-rejection/update-retention controls; every other fixture must be accepted unchanged by native CSSOM or the harness fails. Original152/155 results and the earlier identifier-boundary counterexample failures are retained in local evidence.",
+  "forkCI": {
+    "url": "https://github.com/jipeng6036-del/vue-core/actions/runs/41268271915",
+    "id": 41268271915,
+    "head": "0372bbe363f900e154e5143de6b155519f86af0f",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 124735538549,
+        "name": "test / lint-and-test-dts",
+        "conclusion": "success"
+      },
+      {
+        "id": 124735538647,
+        "name": "test / unit-test",
+        "conclusion": "success"
+      },
+      {
+        "id": 124735538688,
+        "name": "test / e2e-test",
+        "conclusion": "success"
+      },
+      {
+        "id": 124735538740,
+        "name": "test / unit-test-windows",
+        "conclusion": "success"
+      },
+      {
+        "id": 124735539303,
+        "name": "continuous-release",
+        "conclusion": "skipped"
+      }
+    ],
+    "workflow": "Original ci.yml/test.yml unchanged; push event on existing feature branch"
+  }
+}

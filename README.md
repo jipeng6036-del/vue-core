@@ -1,5 +1,7 @@
 # CSS declaration block verification
 
+Latest review follow-up: [unquoted CSS URL tokens on `0372bbe`](review-url-0372bbe/README.md). The original `b4c0ef3` submission evidence below is preserved.
+
 Candidate: [`b4c0ef3`](https://github.com/jipeng6036-del/vue-core/commit/b4c0ef322ddd3be40ff760c97d44a8ee8bc3037a), based on upstream `24c9d0b`.
 
 Preserves Suliman Abdulrazzaq's [#15641](https://github.com/vuejs/core/pull/15641), source `d19e2d9`, through cherry-pick `e46f444`. The additional change tracks matching square/curly/parenthesis delimiters, including nested blocks. The new tests exercise shared parsing, template compilation and SSR. Original quote/comment tests are retained. AI agents assisted implementation and validation; no human review is claimed.

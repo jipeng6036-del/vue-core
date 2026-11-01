@@ -1,0 +1,1283 @@
+{
+  "resolved": {
+    "vue": "node_modules/vue/index.js",
+    "@vue/server-renderer": "node_modules/@vue/server-renderer/index.js",
+    "@vue/shared": "node_modules/@vue/shared/index.js"
+  },
+  "results": [
+    {
+      "mode": "ssr-render",
+      "value": "{ red; blue }",
+      "expected": "<div style=\"--tokens:{ red; blue };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ red; blue };color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "{ red; blue }",
+      "expected": "<div style=\"--tokens:{ red; blue };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ red; blue };color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "[red; blue]",
+      "expected": "<div style=\"--tokens:[red; blue];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[red; blue];color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "[red; blue]",
+      "expected": "<div style=\"--tokens:[red; blue];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[red; blue];color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "<div style=\"--tokens:{ outer: [one; two]; inner: { three; four } };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ outer: [one; two]; inner: { three; four } };color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "<div style=\"--tokens:{ outer: [one; two]; inner: { three; four } };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ outer: [one; two]; inner: { three; four } };color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "[one; { two; three }; four]",
+      "expected": "<div style=\"--tokens:[one; { two; three }; four];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[one; { two; three }; four];color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "[one; { two; three }; four]",
+      "expected": "<div style=\"--tokens:[one; { two; three }; four];color:red;\"></div>",
+      "actual": "<div style=\"--tokens:[one; { two; three }; four];color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "fn([one; two], { three; four })",
+      "expected": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "actual": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "fn([one; two], { three; four })",
+      "expected": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "actual": "<div style=\"--tokens:fn([one; two], { three; four });color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "<div style=\"--tokens:{ &quot;};]&quot;; \\}; [one; two] };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ &quot;};]&quot;; \\}; [one; two] };color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "<div style=\"--tokens:{ &quot;};]&quot;; \\}; [one; two] };color:red;\"></div>",
+      "actual": "<div style=\"--tokens:{ &quot;};]&quot;; \\}; [one; two] };color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "';'",
+      "expected": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "';'",
+      "expected": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;;&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "':)'",
+      "expected": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "':)'",
+      "expected": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&#39;:)&#39;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "\"a;b\"",
+      "expected": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "\"a;b\"",
+      "expected": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&quot;a;b&quot;;color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "url(https://example.com/[)",
+      "expected": "<div style=\"--tokens:url(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "url(https://example.com/[)",
+      "expected": "<div style=\"--tokens:url(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "URL(https://example.com/{)",
+      "expected": "<div style=\"--tokens:URL(https://example.com/{);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:URL(https://example.com/{); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "URL(https://example.com/{)",
+      "expected": "<div style=\"--tokens:URL(https://example.com/{);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:URL(https://example.com/{); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "url(https://example.com/[;x)",
+      "expected": "<div style=\"--tokens:url(https://example.com/[;x);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(https://example.com/[;x); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "url(https://example.com/[;x)",
+      "expected": "<div style=\"--tokens:url(https://example.com/[;x);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(https://example.com/[;x); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "url(https://example.com/a\\)b[)",
+      "expected": "<div style=\"--tokens:url(https://example.com/a\\)b[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(https://example.com/a\\)b[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "url(https://example.com/a\\)b[)",
+      "expected": "<div style=\"--tokens:url(https://example.com/a\\)b[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(https://example.com/a\\)b[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "\\75rl(https://example.com/[)",
+      "expected": "<div style=\"--tokens:\\75rl(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\75rl(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "\\75rl(https://example.com/[)",
+      "expected": "<div style=\"--tokens:\\75rl(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\75rl(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "u\\72l(https://example.com/[)",
+      "expected": "<div style=\"--tokens:u\\72l(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:u\\72l(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "u\\72l(https://example.com/[)",
+      "expected": "<div style=\"--tokens:u\\72l(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:u\\72l(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "\\url(https://example.com/[)",
+      "expected": "<div style=\"--tokens:\\url(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\url(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "\\url(https://example.com/[)",
+      "expected": "<div style=\"--tokens:\\url(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\url(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "\\000075 rl(https://example.com/[)",
+      "expected": "<div style=\"--tokens:\\000075 rl(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\000075 rl(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "\\000075 rl(https://example.com/[)",
+      "expected": "<div style=\"--tokens:\\000075 rl(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\000075 rl(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "url( \t\nhttps://example.com/[)",
+      "expected": "<div style=\"--tokens:url( \t\nhttps://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url( \t\nhttps://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "url( \t\nhttps://example.com/[)",
+      "expected": "<div style=\"--tokens:url( \t\nhttps://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url( \t\nhttps://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "fn(url(https://example.com/[); [one; two])",
+      "expected": "<div style=\"--tokens:fn(url(https://example.com/[); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:fn(url(https://example.com/[); [one; two]); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "fn(url(https://example.com/[); [one; two])",
+      "expected": "<div style=\"--tokens:fn(url(https://example.com/[); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:fn(url(https://example.com/[); [one; two]); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "<!--url(https://example.com/[)",
+      "expected": "<div style=\"--tokens:&lt;!--url(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&lt;!--url(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-template",
+      "value": "<!--url(https://example.com/[)",
+      "expected": "<div style=\"--tokens:&lt;!--url(https://example.com/[);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:&lt;!--url(https://example.com/[); color: red;\"></div>",
+      "pass": false
+    },
+    {
+      "mode": "ssr-render",
+      "value": "myurl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:myurl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:myurl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "myurl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:myurl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:myurl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "-url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:-url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:-url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "-url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:-url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:-url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "--url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:--url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:--url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "--url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:--url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:--url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "_url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:_url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:_url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "_url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:_url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:_url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "éurl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:éurl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:éurl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "éurl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:éurl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:éurl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "\\6d yurl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:\\6d yurl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\6d yurl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "\\6d yurl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:\\6d yurl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:\\6d yurl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "#url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:#url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:#url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "#url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:#url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:#url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "@url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:@url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:@url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "@url(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:@url(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:@url(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "#\\75rl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:#\\75rl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:#\\75rl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "#\\75rl(fn(a); [one; two])",
+      "expected": "<div style=\"--tokens:#\\75rl(fn(a); [one; two]);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:#\\75rl(fn(a); [one; two]);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "url(\"https://example.com/[\")",
+      "expected": "<div style=\"--tokens:url(&quot;https://example.com/[&quot;);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(&quot;https://example.com/[&quot;);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "url(\"https://example.com/[\")",
+      "expected": "<div style=\"--tokens:url(&quot;https://example.com/[&quot;);color:red;\"></div>",
+      "actual": "<div style=\"--tokens:url(&quot;https://example.com/[&quot;);color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-render",
+      "value": "URL( 'https://example.com/{' )",
+      "expected": "<div style=\"--tokens:URL( &#39;https://example.com/{&#39; );color:red;\"></div>",
+      "actual": "<div style=\"--tokens:URL( &#39;https://example.com/{&#39; );color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "ssr-template",
+      "value": "URL( 'https://example.com/{' )",
+      "expected": "<div style=\"--tokens:URL( &#39;https://example.com/{&#39; );color:red;\"></div>",
+      "actual": "<div style=\"--tokens:URL( &#39;https://example.com/{&#39; );color:red;\"></div>",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "{ red; blue }",
+      "expected": "{ red; blue }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ red; blue }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "{ red; blue }",
+      "expected": "{ red; blue }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ red; blue }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "{ red; blue }",
+      "expected": "{ red; blue }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ red; blue }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "[red; blue]",
+      "expected": "[red; blue]",
+      "nativeRejectedCustomFunction": false,
+      "actual": "[red; blue]",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "[red; blue]",
+      "expected": "[red; blue]",
+      "nativeRejectedCustomFunction": false,
+      "actual": "[red; blue]",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "[red; blue]",
+      "expected": "[red; blue]",
+      "nativeRejectedCustomFunction": false,
+      "actual": "[red; blue]",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "{ outer: [one; two]; inner: { three; four } }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ outer: [one; two]; inner: { three; four } }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "{ outer: [one; two]; inner: { three; four } }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ outer: [one; two]; inner: { three; four } }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "{ outer: [one; two]; inner: { three; four } }",
+      "expected": "{ outer: [one; two]; inner: { three; four } }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ outer: [one; two]; inner: { three; four } }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "[one; { two; three }; four]",
+      "expected": "[one; { two; three }; four]",
+      "nativeRejectedCustomFunction": false,
+      "actual": "[one; { two; three }; four]",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "[one; { two; three }; four]",
+      "expected": "[one; { two; three }; four]",
+      "nativeRejectedCustomFunction": false,
+      "actual": "[one; { two; three }; four]",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "[one; { two; three }; four]",
+      "expected": "[one; { two; three }; four]",
+      "nativeRejectedCustomFunction": false,
+      "actual": "[one; { two; three }; four]",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "fn([one; two], { three; four })",
+      "expected": "fn([one; two], { three; four })",
+      "nativeRejectedCustomFunction": false,
+      "actual": "fn([one; two], { three; four })",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "fn([one; two], { three; four })",
+      "expected": "fn([one; two], { three; four })",
+      "nativeRejectedCustomFunction": false,
+      "actual": "fn([one; two], { three; four })",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "fn([one; two], { three; four })",
+      "expected": "fn([one; two], { three; four })",
+      "nativeRejectedCustomFunction": false,
+      "actual": "fn([one; two], { three; four })",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "{ \"};]\"; \\}; [one; two] }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ \"};]\"; \\}; [one; two] }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "{ \"};]\"; \\}; [one; two] }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ \"};]\"; \\}; [one; two] }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "{ \"};]\"; \\}; [one; two] }",
+      "expected": "{ \"};]\"; \\}; [one; two] }",
+      "nativeRejectedCustomFunction": false,
+      "actual": "{ \"};]\"; \\}; [one; two] }",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "';'",
+      "expected": "';'",
+      "nativeRejectedCustomFunction": false,
+      "actual": "';'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "';'",
+      "expected": "';'",
+      "nativeRejectedCustomFunction": false,
+      "actual": "';'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "';'",
+      "expected": "';'",
+      "nativeRejectedCustomFunction": false,
+      "actual": "';'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "':)'",
+      "expected": "':)'",
+      "nativeRejectedCustomFunction": false,
+      "actual": "':)'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "':)'",
+      "expected": "':)'",
+      "nativeRejectedCustomFunction": false,
+      "actual": "':)'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "':)'",
+      "expected": "':)'",
+      "nativeRejectedCustomFunction": false,
+      "actual": "':)'",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "\"a;b\"",
+      "expected": "\"a;b\"",
+      "nativeRejectedCustomFunction": false,
+      "actual": "\"a;b\"",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "\"a;b\"",
+      "expected": "\"a;b\"",
+      "nativeRejectedCustomFunction": false,
+      "actual": "\"a;b\"",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "\"a;b\"",
+      "expected": "\"a;b\"",
+      "nativeRejectedCustomFunction": false,
+      "actual": "\"a;b\"",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "url(https://example.com/[)",
+      "expected": "url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "url(https://example.com/[)",
+      "expected": "url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "url(https://example.com/[)",
+      "expected": "url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "URL(https://example.com/{)",
+      "expected": "URL(https://example.com/{)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "URL(https://example.com/{)",
+      "expected": "URL(https://example.com/{)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "URL(https://example.com/{)",
+      "expected": "URL(https://example.com/{)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "url(https://example.com/[;x)",
+      "expected": "url(https://example.com/[;x)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "url(https://example.com/[;x)",
+      "expected": "url(https://example.com/[;x)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "url(https://example.com/[;x)",
+      "expected": "url(https://example.com/[;x)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "url(https://example.com/a\\)b[)",
+      "expected": "url(https://example.com/a\\)b[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "url(https://example.com/a\\)b[)",
+      "expected": "url(https://example.com/a\\)b[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "url(https://example.com/a\\)b[)",
+      "expected": "url(https://example.com/a\\)b[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "\\75rl(https://example.com/[)",
+      "expected": "\\75rl(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "\\75rl(https://example.com/[)",
+      "expected": "\\75rl(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "\\75rl(https://example.com/[)",
+      "expected": "\\75rl(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "u\\72l(https://example.com/[)",
+      "expected": "u\\72l(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "u\\72l(https://example.com/[)",
+      "expected": "u\\72l(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "u\\72l(https://example.com/[)",
+      "expected": "u\\72l(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "\\url(https://example.com/[)",
+      "expected": "\\url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "\\url(https://example.com/[)",
+      "expected": "\\url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "\\url(https://example.com/[)",
+      "expected": "\\url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "\\000075 rl(https://example.com/[)",
+      "expected": "\\000075 rl(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "\\000075 rl(https://example.com/[)",
+      "expected": "\\000075 rl(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "\\000075 rl(https://example.com/[)",
+      "expected": "\\000075 rl(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "url( \t\nhttps://example.com/[)",
+      "expected": "url( \t\nhttps://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "url( \t\nhttps://example.com/[)",
+      "expected": "url( \t\nhttps://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "url( \t\nhttps://example.com/[)",
+      "expected": "url( \t\nhttps://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "fn(url(https://example.com/[); [one; two])",
+      "expected": "fn(url(https://example.com/[); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "fn(url(https://example.com/[); [one; two])",
+      "expected": "fn(url(https://example.com/[); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "fn(url(https://example.com/[); [one; two])",
+      "expected": "fn(url(https://example.com/[); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "<!--url(https://example.com/[)",
+      "expected": "<!--url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-template",
+      "value": "<!--url(https://example.com/[)",
+      "expected": "<!--url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-update",
+      "value": "<!--url(https://example.com/[)",
+      "expected": "<!--url(https://example.com/[)",
+      "nativeRejectedCustomFunction": false,
+      "actual": "initial",
+      "color": "",
+      "pass": false
+    },
+    {
+      "mode": "browser-render",
+      "value": "myurl(fn(a); [one; two])",
+      "expected": "myurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "myurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "myurl(fn(a); [one; two])",
+      "expected": "myurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "myurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "myurl(fn(a); [one; two])",
+      "expected": "myurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "myurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "-url(fn(a); [one; two])",
+      "expected": "-url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "-url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "-url(fn(a); [one; two])",
+      "expected": "-url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "-url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "-url(fn(a); [one; two])",
+      "expected": "-url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "-url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "--url(fn(a); [one; two])",
+      "expected": "",
+      "nativeRejectedCustomFunction": true,
+      "actual": "",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "--url(fn(a); [one; two])",
+      "expected": "",
+      "nativeRejectedCustomFunction": true,
+      "actual": "",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "--url(fn(a); [one; two])",
+      "expected": "initial",
+      "nativeRejectedCustomFunction": true,
+      "actual": "initial",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "_url(fn(a); [one; two])",
+      "expected": "_url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "_url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "_url(fn(a); [one; two])",
+      "expected": "_url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "_url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "_url(fn(a); [one; two])",
+      "expected": "_url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "_url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "éurl(fn(a); [one; two])",
+      "expected": "éurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "éurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "éurl(fn(a); [one; two])",
+      "expected": "éurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "éurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "éurl(fn(a); [one; two])",
+      "expected": "éurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "éurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "\\6d yurl(fn(a); [one; two])",
+      "expected": "\\6d yurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "\\6d yurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "\\6d yurl(fn(a); [one; two])",
+      "expected": "\\6d yurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "\\6d yurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "\\6d yurl(fn(a); [one; two])",
+      "expected": "\\6d yurl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "\\6d yurl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "#url(fn(a); [one; two])",
+      "expected": "#url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "#url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "#url(fn(a); [one; two])",
+      "expected": "#url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "#url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "#url(fn(a); [one; two])",
+      "expected": "#url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "#url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "@url(fn(a); [one; two])",
+      "expected": "@url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "@url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "@url(fn(a); [one; two])",
+      "expected": "@url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "@url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "@url(fn(a); [one; two])",
+      "expected": "@url(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "@url(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "#\\75rl(fn(a); [one; two])",
+      "expected": "#\\75rl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "#\\75rl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "#\\75rl(fn(a); [one; two])",
+      "expected": "#\\75rl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "#\\75rl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "#\\75rl(fn(a); [one; two])",
+      "expected": "#\\75rl(fn(a); [one; two])",
+      "nativeRejectedCustomFunction": false,
+      "actual": "#\\75rl(fn(a); [one; two])",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "url(\"https://example.com/[\")",
+      "expected": "url(\"https://example.com/[\")",
+      "nativeRejectedCustomFunction": false,
+      "actual": "url(\"https://example.com/[\")",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "url(\"https://example.com/[\")",
+      "expected": "url(\"https://example.com/[\")",
+      "nativeRejectedCustomFunction": false,
+      "actual": "url(\"https://example.com/[\")",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "url(\"https://example.com/[\")",
+      "expected": "url(\"https://example.com/[\")",
+      "nativeRejectedCustomFunction": false,
+      "actual": "url(\"https://example.com/[\")",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-render",
+      "value": "URL( 'https://example.com/{' )",
+      "expected": "URL( 'https://example.com/{' )",
+      "nativeRejectedCustomFunction": false,
+      "actual": "URL( 'https://example.com/{' )",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-template",
+      "value": "URL( 'https://example.com/{' )",
+      "expected": "URL( 'https://example.com/{' )",
+      "nativeRejectedCustomFunction": false,
+      "actual": "URL( 'https://example.com/{' )",
+      "color": "red",
+      "pass": true
+    },
+    {
+      "mode": "browser-update",
+      "value": "URL( 'https://example.com/{' )",
+      "expected": "URL( 'https://example.com/{' )",
+      "nativeRejectedCustomFunction": false,
+      "actual": "URL( 'https://example.com/{' )",
+      "color": "red",
+      "pass": true
+    }
+  ],
+  "browser": "156.0.8078.4",
+  "passed": 100,
+  "total": 155
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "variant": "before",
+    "rawBytes": 113643,
+    "gzipBytes": 42537
+  },
+  {
+    "variant": "candidate",
+    "rawBytes": 114251,
+    "gzipBytes": 42831
+  }
+]

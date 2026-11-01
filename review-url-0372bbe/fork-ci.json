@@ -1,0 +1,34 @@
+{
+  "url": "https://github.com/jipeng6036-del/vue-core/actions/runs/41268271915",
+  "id": 41268271915,
+  "head": "0372bbe363f900e154e5143de6b155519f86af0f",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 124735538549,
+      "name": "test / lint-and-test-dts",
+      "conclusion": "success"
+    },
+    {
+      "id": 124735538647,
+      "name": "test / unit-test",
+      "conclusion": "success"
+    },
+    {
+      "id": 124735538688,
+      "name": "test / e2e-test",
+      "conclusion": "success"
+    },
+    {
+      "id": 124735538740,
+      "name": "test / unit-test-windows",
+      "conclusion": "success"
+    },
+    {
+      "id": 124735539303,
+      "name": "continuous-release",
+      "conclusion": "skipped"
+    }
+  ],
+  "workflow": "Original ci.yml/test.yml unchanged; push event on existing feature branch"
+}
